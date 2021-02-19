@@ -10,7 +10,7 @@ public class calculadoraHTTP
 		HttpResponse<String> response = null;
 		try
 		{
-			response = Unirest.get("url").asString();
+			response = Unirest.get("https://calculadora-arep-parcial.herokuapp.com/operacion?operacion="+operacion+"&numero="+numero).asString();
 		} catch(UnirestException e)
 		{
 			e.printStackTrace();
