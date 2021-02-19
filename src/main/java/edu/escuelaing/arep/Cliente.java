@@ -2,7 +2,7 @@ package edu.escuelaing.arep;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import edu.eci.escuelaing.arep.components.HttpRequest;
+import edu.escuelaing.arep.calculadoraHTTP;
 
 public class Cliente 
 {

@@ -13,7 +13,7 @@ public class calculadoraHTTP
 			response = Unirest.get("url").asString();
 		} catch(UnirestException e)
 		{
-			e.printStacktrace();
+			e.printStackTrace();
 		}
 		return response.getBody();
 	}

@@ -2,10 +2,10 @@ package edu.escuelaing.arep;
 import org.json.JSONObject;
 import spark.Request;
 import spark.Response;
+import static spark.Spark.*;
 
 public class Spark
 {
-	private static calculadoraHTTP servidor;
 
 	 public static void main(String[] args )
 	    {
@@ -15,15 +15,15 @@ public class Spark
 	    	{
 	    		String operacion = req.queryParams("operacion");
 	    		String numero = req.queryParams("numero");
-	    		JSONObject json = new JSONObject(ServidorHTTP.get(operacion, numero));
+	    		JSONObject json = new JSONObject(calculadoraHTTP.get(operacion, numero));
 	    		return json;
 	    	});
 	    	get("/resultados", (req, res) ->
 	    	{
 	    		String operacion = req.queryParams("operacion");
 	    		String numero = req.queryParams("numero");
-	    		JSONObject json = new JSONObject(servidorHTTP.get(operacion, numero));
-	    		return datosDeSalida(jsonObject);
+	    		JSONObject json = new JSONObject(calculadoraHTTP.get(operacion, numero));
+	    		return datosDeSalida(json);
 	    	});
 	    }
 	    
